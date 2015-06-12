@@ -8,9 +8,9 @@ let Surface = ReactCanvas.Surface;
 let Image = ReactCanvas.Image;
 let Text = ReactCanvas.Text;
 
-let MyComponent = React.createClass({
+class MyComponent extends React.Component {
 
-  render: function() {
+  render() {
     let surfaceWidth = window.innerWidth;
     let surfaceHeight = window.innerHeight;
     let imageStyle = this.getImageStyle();
@@ -18,28 +18,28 @@ let MyComponent = React.createClass({
 
     return (
       <Surface width={surfaceWidth} height={surfaceHeight} left={0} top={0}>
-        <Image style={imageStyle} src='...' />
+        <Image style={imageStyle} src='img/sand.jpg' />
         <Text style={textStyle}>
           Here is some text below an image.
         </Text>
       </Surface>
     );
-  },
+  }
 
-  getImageHeight: function () {
+  getImageHeight() {
     return Math.round(window.innerHeight / 2);
-  },
+  }
 
-  getImageStyle: function () {
+  getImageStyle() {
     return {
       top: 0,
       left: 0,
       width: window.innerWidth,
       height: this.getImageHeight()
     };
-  },
+  }
 
-  getTextStyle: function () {
+  getTextStyle() {
     return {
       top: this.getImageHeight() + 10,
       left: 0,
@@ -50,6 +50,6 @@ let MyComponent = React.createClass({
     };
   }
 
-});
+};
 
 React.render(<MyComponent />, document.getElementById("stage"));

@@ -4,5 +4,6 @@ import gulp from "gulp";
 
 gulp.task("default", [
     "react",
-    "copy"
+    "copy",
+    "img"
 ]);
